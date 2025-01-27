@@ -1,0 +1,265 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # Block access to "hidden" directories whose names begin with a period. This
+  # includes directories used by version control systems such as Subversion or
+  # Git to store control files. Files whose names begin with a period, as well
+  # as the control files used by CVS, are protected by the FilesMatch directive
+  # above.
+  #
+  # NOTE: This only works when mod_rewrite is loaded. Without mod_rewrite, it is
+  # not possible to block access to entire directories from .htaccess, because
+  # <DirectoryMatch> is not allowed here.
+  #
+  # If you do not have mod_rewrite installed, you should remove these
+  # directories from your webroot or otherwise protect them from being
+  # downloaded.
+  #RewriteRule "(^|/)\." - [F]
+
+  # If your site can be accessed both with and without the 'www.' prefix, you
+  # can use one of the following settings to redirect users to your preferred
+  # URL, either WITH or WITHOUT the 'www.' prefix. Choose ONLY one option:
+  #
+  # To redirect all users to access the site WITH the 'www.' prefix,
+  # (http://example.com/... will be redirected to http://www.example.com/...)
+  # uncomment the following:
+  #RewriteCond %{HTTP_HOST} !^www\. [NC]
+  #RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  #
+  # To redirect all users to access the site WITHOUT the 'www.' prefix,
+  # (http://www.example.com/... will be redirected to http://example.com/...)
+  # uncomment the following:,
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+  RewriteBase /
+  RewriteRule ^\?(.*)$ index.php?$1 [QSA,L]
+  RewriteRule ^.htaccess$ ./index.php [NC,L]
+  RewriteRule ^sitemap\.xml$ ./index.php?f=sitemap.xml&full[NC,L]
+  RewriteRule ^files/sitemap\.xsl$ ./index.php?f=files/sitemap.xsl&full[NC,L]
+  RewriteRule ^files/([^/]*)(/|)$ ./files.php?f=$1 [NC,L]
+
+  ### BOOST START ### Changed 
+
+  # Allow for alt paths to be set via htaccess rules; allows for cached variants (future mobile support)
+  RewriteRule .* - [E=boostpath:normal]
+
+  # Caching for anonymous users
+  # Skip boost IF not get request OR uri has wrong dir OR cookie is set OR request came from this server OR https request
+  RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [OR]
+  RewriteCond %{REQUEST_URI} (^/(admin|cache|misc|modules|sites|system|openid|themes|node/add|comment/reply|scanner))|(/(edit|users|users/(login|password|register))$) [OR]
+  RewriteCond %{HTTPS} on [OR]
+  RewriteCond %{HTTP_COOKIE} DRUPAL_UID [OR]
+  RewriteCond %{ENV:REDIRECT_STATUS} 200
+  RewriteRule .* - [S=7]
+
+  # GZIP
+  RewriteCond %{HTTP:Accept-encoding} !gzip
+  RewriteRule .* - [S=3]
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.html\.gz -s
+  RewriteRule .* cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.html\.gz [L,T=text/html,E=no-gzip:1]
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.xml\.gz -s
+  RewriteRule .* cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.xml\.gz [L,T=application/xml,E=no-gzip:1]
+
+  # NORMAL
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.html -s
+  RewriteRule .* cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.html [L,T=text/html]
+  RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.xml -s
+  RewriteRule .* cache/%{ENV:boostpath}/%{HTTP_HOST}%{REQUEST_URI}_%{QUERY_STRING}\.xml [L,T=application/xml]
+
+  ### BOOST END ###
+
+  # Pass all requests not referring directly to files in the filesystem to
+  # index.php. Clean URLs are handled in drupal_environment_initialize().
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteRule ^ index.php [L] #Changed 
+
+  # Rules to correctly serve gzip compressed CSS and JS files.
+  # Requires both mod_rewrite and mod_headers to be enabled.
+  # if there's no file at the requested path..
+</IfModule>
+  
+    # Enable GZIP
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</ifmodule>
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+  # Data interchange
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML - Behält die Website eine Stunde im Cache, neues wird erst nach Ablauf einer Stunde
+  # angezeigt. Wenn nicht gewuenscht, bei 3600 eine Null eintragen
+    ExpiresByType text/html                             "access plus 3600 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 year"
+    ExpiresByType application/x-javascript              "access plus 1 year"
+    ExpiresByType text/javascript                       "access plus 1 year"
+
+  # Manifest files
+    ExpiresByType application/manifest+json             "access plus 1 week"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Media files
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Web fonts
+
+    # Embedded OpenType (EOT)
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType font/eot                              "access plus 1 month"
+
+    # OpenType
+    ExpiresByType font/opentype                         "access plus 1 month"
+
+    # TrueType
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/x-font-woff               "access plus 1 month"
+    ExpiresByType font/woff                             "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 2.0
+    ExpiresByType application/font-woff2                "access plus 1 month"
+
+  # Other
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+</IfModule>
+
+<IfModule mod_deflate.c>
+# Insert filters / compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/vtt 
+AddOutputFilterByType DEFLATE text/x-component
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/js
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE application/atom+xml 
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE application/ld+json 
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject 
+AddOutputFilterByType DEFLATE application/x-font-ttf 
+AddOutputFilterByType DEFLATE application/x-web-app-manifest+json 
+AddOutputFilterByType DEFLATE font/opentype 
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/x-icon 
+
+# Exception: Images
+SetEnvIfNoCase REQUEST_URI \.(?:gif|jpg|jpeg|png|svg)$ no-gzip dont-vary
+
+# Drop problematic browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# Make sure proxies don't deliver the wrong content
+Header append Vary User-Agent env=!dont-vary
+Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+#Alternative caching using Apache's "mod_headers", if it's installed.
+#Caching of common files - ENABLED
+<IfModule mod_headers.c>
+<FilesMatch "\.(ico|pdf|flv|swf|js|css|gif|png|jpg|jpeg|txt)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+Header edit Set-Cookie ^(.*)$ $1;Secure;SameSite=None
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+# Set Keep Alive Header
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# If your server don't support ETags deactivate with "None" (and remove header)
+<IfModule mod_expires.c> 
+  <IfModule mod_headers.c> 
+    Header unset ETag 
+  </IfModule> 
+  FileETag None 
+</IfModule>
+
+# Cache Headers
+
+
+<IfModule mod_headers.c>
+  # Serve gzip compressed CSS files if they exist and the client accepts gzip.
+  RewriteCond %{HTTP:Accept-encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}\.gz -s
+  RewriteRule ^(.*)\.css $1\.css\.gz [QSA]
+
+
+  # Serve correct content types, and prevent mod_deflate double gzip.
+  RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
+
+  <FilesMatch "(\.css\.gz)$">
+    # Serve correct encoding type.
+    Header set Content-Encoding gzip
+    # Force proxies to cache gzipped & non-gzipped css/js files separately.
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+  # Cache specified files for 31 days
+<FilesMatch "\.(ico|flv|jpg|jpeg|png|gif|css|swf)$">
+Header set Cache-Control "max-age=2678400, public"
+</FilesMatch>
+# Cache HTML files for a couple hours
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=30, private, must-revalidate"
+</FilesMatch>
+# Cache PDFs for a day
+# Cache Javascripts for 31 days
+<FilesMatch "\.(js)$">
+Header set Cache-Control "max-age=2678400, private"
+</FilesMatch>
+</IfModule>

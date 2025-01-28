@@ -41,7 +41,7 @@ sometimes, certain cooperate proxies block my personal website for unknown reaso
 
 ## 🖨️ printable cv
 
-whether you’re online or offline, this cV is fully printable. it’s optimized for printing both with and without background styles to suit your preference.
+whether you’re online or offline, this cv is fully printable. it’s optimized for printing both with and without background styles to suit your preference.
 
 ---
 

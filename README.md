@@ -1,27 +1,27 @@
-# 🌐 My Curriculum Vitae
+# 🌐 my own personal curriculum vitae (cv)
 
-A beautifully crafted CV rendered in vanilla HTML, CSS, and JavaScript. It’s fully printable and supports printing with or without backgrounds. Check it out live:
+a beautifully crafted cv rendered in vanilla html, css, and javascript. it’s fully printable and supports printing with or without backgrounds. check it out live:
 
-[🔗 Visit sahin.uk](https://sahin.uk/)
+[🔗 visit sahin.uk](https://sahin.uk/)
 
 ---
 
-## 🚀 Deployment
+## 🚀 deployment
 
-This project is deployed using:
+this project is deployed using:
 
 - **Cloudflare**
 - **GitHub Pages**
 
 ---
 
-## 🔄 Mirroring
+## 🔄 mirror
 
-Sometimes, certain proxies block my personal website for unknown reasons. To ensure accessibility, here’s a list of several available mirrors:
+sometimes, certain cooperate proxies block my personal website for unknown reasons. to ensure accessibility, here’s a list of several available mirrors:
 
 - [abdellaui.clan.rip](https://abdellaui.clan.rip)
 - [abdullah.clan.rip](https://abdullah.clan.rip)
-- [abdullahsahin.clan.rip](https://abdullahsahin.clan.rip)
+- [abdullahsahin.clan.rip](https://abdullahsahin.clan.rip) (this and my tld `sahin.uk` are for unknown reasons blocked by my current cooparte proxy, thanks)
 - [anonymous.clan.rip](https://anonymous.clan.rip)
 - [dev.clan.rip](https://dev.clan.rip)
 - [dns.clan.rip](https://dns.clan.rip)
@@ -39,14 +39,14 @@ Sometimes, certain proxies block my personal website for unknown reasons. To ens
 
 ---
 
-## 🖨️ Printable CV
+## 🖨️ printable cv
 
-Whether you’re online or offline, this CV is fully printable. It’s optimized for printing both with and without background styles to suit your preference.
+whether you’re online or offline, this cV is fully printable. it’s optimized for printing both with and without background styles to suit your preference.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ technologies used
 
-- **HTML**
-- **CSS**
-- **JavaScript**
+- **html**
+- **css**
+- **javascript**

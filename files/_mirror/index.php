@@ -1,5 +1,5 @@
 <?php
-$target_url = 'https://sahin-2x1.pages.dev';
+$target_url = 'https://sahin-2x1.pages.dev/';
 $requested_file = "";
 $replace_full = '"';
 
@@ -11,7 +11,7 @@ if (isset($_GET['full'])) {
     $replace_full = '';
 }
 
-$target_url = $target_url . '/' . urlencode($requested_file);
+$target_url = $target_url . urlencode($requested_file);
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $target_url);
@@ -47,6 +47,7 @@ if (curl_errno($ch)) {
         $response = preg_replace('/<link rel=\"canonical\" href=\"[^\"]*\" \/>/i', '<link rel="canonical" href="https://'. $my_host .'/" />', $response);
         $response = preg_replace('/<title>.*?<\/title>/i', '<title>abdullah şahin - a passionate software engineer. [MIRRORED]</title>', $response);
         $response = preg_replace('/'.$replace_full.'https:\/\/sahin\.uk\//i', $replace_full.'https://'. $my_host .'/', $response);
+        $response = preg_replace('/'.$replace_full.'https:\/\/abdellaui\.github\.io\/sahin\.uk\//i', $replace_full.'https://'. $my_host .'/', $response);
         // $response = preg_replace('/\"sahin\.uk/i', '"sahin.clan.rip', $response);
         // $response = preg_replace('/\"\/files\//i', '"/files.php?f=', $response);
 

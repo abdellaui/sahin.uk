@@ -1,9 +1,9 @@
 <?php
-$remote_base_url = 'https://sahin.uk/files';
+$remote_base_url = 'https://sahin-2x1.pages.dev/files/';
 
 if (isset($_GET['f'])) {
     $requested_file = $_GET['f'];
-    $remote_file_url = $remote_base_url . '/' . urlencode($requested_file);
+    $remote_file_url = $remote_base_url . urlencode($requested_file);
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $remote_file_url);

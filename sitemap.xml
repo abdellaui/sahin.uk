@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://sahin.uk/files/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://abdellaui.github.io/sahin.uk/files/sitemap.xsl"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7,62 +7,67 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://sahin.uk/</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Zwischenzeugnis_dwpbank.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Zwischenzeugnis_dwpbank.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Arbeitszeugnis_adesso.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Arbeitszeugnis_adesso.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Praktikumsbeurteilung_sparkasse_bochum.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Praktikumsbeurteilung_sparkasse_bochum.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Bachelor_Zeugnis.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_sahin_bachelorarbeit_final.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Abitur_Zeugnis.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Bachelor_Zeugnis.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_geschaeftsbericht_dwpbank_2020.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Abitur_Zeugnis.pdf</loc>
+  <lastmod>2025-01-27T04:07:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_geschaeftsbericht_dwpbank_2020.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Kolloquium.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Kolloquium.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_Reinforcement_Learning.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_Reinforcement_Learning.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/pdf/_SoPlan.pdf</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/pdf/V_SoPlan.pdf</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/routenfahrer/</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/routenfahrer/</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://sahin.uk/routenfahrer/privacy/</loc>
+  <loc>https://abdellaui.github.io/sahin.uk/routenfahrer/privacy/</loc>
   <lastmod>2025-01-27T04:07:16+00:00</lastmod>
   <priority>0.50</priority>
 </url>

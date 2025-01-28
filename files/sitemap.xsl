@@ -74,7 +74,7 @@
                 <xsl:apply-templates/>
 
                 <footer class="mw8 center pv4 tc">
-                    back to <a href="https://sahin.uk/" title="sahin.uk" class="link blue">sahin.uk</a>
+                    back to <a href="https://abdellaui.github.io/sahin.uk/" title="sahin.uk" class="link blue">sahin.uk</a>
                 </footer>
 
             </body>

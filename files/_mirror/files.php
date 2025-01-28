@@ -1,5 +1,5 @@
 <?php
-$remote_base_url = 'https://sahin-2x1.pages.dev/files/';
+$remote_base_url = 'https://sahin-uk.pages.dev/files/';
 
 if (isset($_GET['f'])) {
     $requested_file = $_GET['f'];

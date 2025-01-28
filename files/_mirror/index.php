@@ -1,5 +1,5 @@
 <?php
-$target_url = 'https://sahin-2x1.pages.dev/';
+$target_url = 'https://sahin-uk.pages.dev/';
 $requested_file = "";
 $replace_full = '"';
 

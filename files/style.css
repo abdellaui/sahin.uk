@@ -94,10 +94,10 @@ body {
 }
 
 .pattern-container span {
-    -webkit-animation-duration: 10s;
+    -webkit-animation-duration: 15s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-name: breathe;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-name: breathe;
 }

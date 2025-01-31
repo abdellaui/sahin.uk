@@ -21,7 +21,7 @@ sometimes, certain cooperate proxies block my personal website for unknown reaso
 
 - [abdellaui.clan.rip](https://abdellaui.clan.rip)
 - [abdullah.clan.rip](https://abdullah.clan.rip)
-- [abdullahsahin.clan.rip](https://abdullahsahin.clan.rip) (this and my tld `sahin.uk` are for unknown reasons blocked by my current cooparte proxy, thanks)
+- [abdullahsahin.clan.rip](https://abdullahsahin.clan.rip)
 - [anonymous.clan.rip](https://anonymous.clan.rip)
 - [dev.clan.rip](https://dev.clan.rip)
 - [dns.clan.rip](https://dns.clan.rip)

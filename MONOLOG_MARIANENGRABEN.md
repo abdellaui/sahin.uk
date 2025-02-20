@@ -3,7 +3,7 @@
 hey mum,
 
 
-ich will das du dich wieder an die alten tage erinnerst, dich im spiegel und in den seelen deiner enkeln, deiner kinder, deinem ehemann, verwandten, bekannten und freunden wieder erkennst!
+ich will, dass du dich wieder an die alten tage erinnerst, dich im spiegel und in den seelen deiner enkel, deiner kinder, deinem ehemann, verwandten, bekannten und freunden wieder erkennst!
 
 ----------
 
@@ -27,9 +27,9 @@ du hast dir zeit für jeden von uns genommen!
 
 ----------
 
-ja, du denkst also bist du
+ja, du denkst, also bist du
 
-ja, du bist du das ist wichtig
+ja, du bist du, das ist wichtig
 
 ja, dir war erziehung sehr wichtig
 
@@ -83,17 +83,17 @@ ich weiss, ich weiss…
 
 ----------
 
-trotzdem, du verdienst es weiterhin
+trotzdem verdienst du es weiterhin
 
-trotzdem, du bist tapfer weiterhin
+trotzdem bist du tapfer weiterhin
 
-trotzdem, du bist stark weiterhin
+trotzdem bist du stark weiterhin
 
-trotzdem, du kämpfst weiterhin
+trotzdem kämpfst du weiterhin
 
 ----------
 
-solltest du diese nachricht doch nicht lesen oder tante begegenen, richte schöne grüsse von uns aus und verlass dich auf uns. wir werde nur für dich weiterhin in die mensa gehen und etwas .essen! jenseits zu deinem talent geschick und kochkünste <3
+solltest du diese nachricht doch nicht lesen oder tante begegnen, richte schöne grüsse von uns aus und verlass dich auf uns. wir werden nur für dich weiterhin in die mensa gehen und etwas .essen! jenseits zu deinem talent, geschick und kochkünste <3
 
 ----------
 
@@ -127,4 +127,3 @@ danke für alles, Riese!
 ----------
 
 11.04.2024T16:07:30+01:00 thx v2004
-

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0;url=https://www.tutorials.de/members/abdellaui.280357/?tooltip=true&_xfResponseType=html&_xfWithData=1">
+    <title>Redirecting to tutorials.de...</title>
+    <script>
+        function redirection() {
+            window.location.href = "https://www.tutorials.de/members/abdellaui.280357/?tooltip=true&_xfResponseType=html&_xfWithData=1";
+        }
+        
+        setTimeout(redirection, 100);
+    </script>
+</head>
+<body onload="redirection()">
+    <h1>Redirecting...</h1>
+    <p>You are being redirected to tutorials.de. If the redirection does not happen automatically, <a href="https://www.tutorials.de/members/abdellaui.280357/?tooltip=true&_xfResponseType=html&_xfWithData=1">click here</a>.</p>
+    <script>
+        setTimeout(redirection, 500);
+    </script>
+</body>
+</html>

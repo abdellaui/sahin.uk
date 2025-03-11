@@ -30,9 +30,9 @@ body {
     pointer-events: none;
     overflow-x: hidden !important;
     margin: 0px auto;
-    box-shadow: 0px 0px 15px 5px #000000;
+    box-shadow: 0px 0px 15px 5px #333333;
     backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.33);
 }
 
 .bg-color {
@@ -45,7 +45,7 @@ body {
     z-index: -200;
     pointer-events: none;
     overflow: hidden;
-    background: linear-gradient(45deg, #f7f9f2, #ebefe5);
+    background: linear-gradient(45deg, #dfdece, #b1afa4);
 }
 
 .bg-color:before {
@@ -106,7 +106,7 @@ body {
     position: relative;
     grid-column: span 3;
     grid-row: span 3;
-    background: #89bae5;
+    background: rgba(0, 0, 0, 0.3)
 }
 
 .pattern-container span:nth-child(1):after {
@@ -116,13 +116,13 @@ body {
     left: 0;
     width: 100%;
     height: calc(100% - 95px);
-    background: linear-gradient(to right, transparent, #89bae5);
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3));
 }
 
 .pattern-container span:nth-child(2) {
     grid-column: span 2;
     grid-row: span 3;
-    background: linear-gradient(45deg, #12100e, #2b4162);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
 
     -webkit-animation-name: breathe2;
     animation-name: breath2;
@@ -132,7 +132,7 @@ body {
     position: relative;
     grid-column: span 1;
     grid-row: span 3;
-    background-color: #11173c;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .pattern-container span:nth-child(3):after {
@@ -142,7 +142,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(100% - 95px);
-    background: linear-gradient(to top, #1e3d8d, #89bae5, #4c77bb);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
 @media (max-width: 768px) {
@@ -154,19 +154,19 @@ body {
 .pattern-container span:nth-child(4) {
     grid-column: span 4;
     grid-row: span 7;
-    background-color: #151a3a;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .pattern-container span:nth-child(5) {
     grid-column: span 3;
     grid-row: span 2;
-    background: linear-gradient(to right, #1e3d8d, #89bae5, #4c77bb);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
 }
 
 .pattern-container span:nth-child(6) {
     grid-column: span 2;
     grid-row: span 2;
-    background: linear-gradient(45deg, #12100e, #2b4162);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
 
     -webkit-animation-name: breathe2;
     animation-name: breath2;
@@ -175,7 +175,7 @@ body {
 .pattern-container span:nth-child(7) {
     grid-column: span 1;
     grid-row: span 2;
-    background: linear-gradient(225deg, #1e3d8d, #89bae5, #4c77bb);
+    background: linear-gradient(225deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
 }
 
 @-webkit-keyframes breathe {

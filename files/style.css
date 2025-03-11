@@ -45,7 +45,7 @@ body {
     z-index: -200;
     pointer-events: none;
     overflow: hidden;
-    background: linear-gradient(45deg, #dfdece, #b1afa4);
+    background: linear-gradient(45deg, #f7f9f2, #ebefe5);
 }
 
 .bg-color:before {

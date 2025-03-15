@@ -590,21 +590,20 @@ div#page-break-2 {
 
 #print-button {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 35px;
+    right: 35px;
     z-index: 20;
 }
 
 #print-button button {
-    padding: 5px 12px;
-    border-radius: 10px !important;
-    border: 1px solid rgba(0, 0, 0, 0.25) !important;
+    padding: 7px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
     overflow: hidden !important;
     cursor: pointer;
     font-weight: 800;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 2px !important;
-    background: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
     color: #333 !important;
 }
 

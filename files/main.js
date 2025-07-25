@@ -99,15 +99,15 @@ window.onload = () => {
     document.getElementById('render-date-1').textContent = dateStr;
     document.getElementById('render-date-2').textContent = dateStr;
 
-    const printCV = (e) => {
+    const printPage = (e) => {
         e.preventDefault()
         window.print();
         return false;
     };
 
     let printButton = document.getElementById("print-button")
-    printButton.addEventListener('click', printCV);
-    printButton.addEventListener('touchstart', printCV);
+    printButton.addEventListener('click', printPage);
+    printButton.addEventListener('touchstart', printPage);
 
     window.onbeforeprint = () => {
         if (window.getSelection) { window.getSelection().removeAllRanges(); }

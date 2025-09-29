@@ -1,0 +1,3 @@
+build:
+  command: ./cloudflare_preprocess.sh
+  root: ./

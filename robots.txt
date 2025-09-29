@@ -1,0 +1,6 @@
+Allow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+Sitemap: https://abdellaui.github.io/sahin.uk/sitemap.xml
